@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "DM Mono", ui-monospace, monospace;
+  
+  /* ── Modern Dark-Warm Palette ── */
+  --color-brand-cream: #E8E0D0;   /* page background — warm linen */
+  --color-brand-beige: #D9CEBB;   /* secondary surfaces */
+  --color-brand-tan: #B8860B;     /* primary accent — dark goldenrod */
+  --color-brand-brown: #1A1714;   /* text — deep espresso */
+  --color-brand-stone: #C9BDA8;   /* borders — warm stone */
+}
+
+/* ── Autofill Overrides ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px rgba(31, 29, 26, 0.95) inset !important;
+    -webkit-text-fill-color: #F8F6F1 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global utility for cards/containers */
+.card-clay {
+  background-color: #fffdf9;
+  border-color: var(--color-brand-stone);
+}
+
+/* ========== Global Animations ========== */
+
+@keyframes move-dots {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
+.dots-pattern {
+  background-image: radial-gradient(circle, #B8860B 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(10px, -15px); }
+  66% { transform: translate(-8px, 12px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-brown) 0%,
+    var(--color-brand-tan) 50%,
+    var(--color-brand-brown) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    font-family: serif; /* More professional for documents */
+  }
+
+  /* Hide UI elements */
+  nav, 
+  aside, 
+  header,
+  .no-print,
+  button,
+  .flex-item-center-gap-2 { /* Action buttons container */
+    display: none !important;
+  }
+
+  /* Force display of the main content */
+  .max-w-5xl, .max-w-3xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .bg-white {
+    background: white !important;
+  }
+
+  .rounded-xl {
+    border-radius: 0 !important;
+  }
+
+  .border, .border-b {
+    border-color: #000 !important;
+  }
+
+  /* Header Branding for Print */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+  }
+
+  .print-header h1 {
+    font-size: 24pt;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10pt;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
+  }
+
+  /* Table styles for print */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    text-align: left !important;
+  }
+
+  th {
+    background-color: #f2f2f2 !important;
+    color: black !important;
+  }
+
+  /* Typography adjustments */
+  .text-brand-brown, .text-gray-500 {
+    color: black !important;
+  }
+
+  .text-brand-tan {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  /* Helper to ensure labels and values are visible */
+  label {
+    font-weight: bold !important;
+    margin-bottom: 2px !important;
+    display: block !important;
+  }
+
+  input, select, textarea {
+    border: none !important;
+    appearance: none !important;
+    font-size: 12pt !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+}
+
+/* Hide print-only elements from screen */
+.print-header, .print-footer {
+  display: none;
+}
