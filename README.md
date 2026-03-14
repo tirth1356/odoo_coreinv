@@ -6,7 +6,7 @@
 ![Supabase](https://img.shields.io/badge/Database-Supabase-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-tutorial at - https://github.com/tirth1356/odoo_coreinv.git
+tutorial at - https://www.youtube.com/watch?v=OIQ6rtuyfDo
 
 **GoodStock** is a modern **enterprise-grade inventory management platform** designed for businesses that require **real-time stock tracking, warehouse coordination, and operational transparency**.
 
