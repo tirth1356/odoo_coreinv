@@ -1,111 +1,202 @@
-# 📦 GoodStock | Enterprise Inventory Management
+# 📦 GoodStock — Enterprise Inventory Management System
 
-**GoodStock** is a high-fidelity, industrial-grade inventory management solution built with modern web technologies. Designed for speed, reliability, and precision, it provides businesses with a powerful operations hub to track products, manage transfers, and optimize warehouse logistics.
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-blue)
+![Vite](https://img.shields.io/badge/Vite-Fast%20Build-purple)
+![Supabase](https://img.shields.io/badge/Database-Supabase-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+**GoodStock** is a modern **enterprise-grade inventory management platform** designed for businesses that require **real-time stock tracking, warehouse coordination, and operational transparency**.
+
+The system acts as a **central logistics hub** where warehouse managers can track inventory, perform stock movements, and manage operations across multiple locations.
+
+Built using **React + Supabase**, GoodStock delivers **high performance, modern UI, and real-time data synchronization**.
+---
+
+# 🎯 Project Goals
+
+GoodStock was built to simulate a **real-world ERP inventory module** similar to systems used in large logistics and manufacturing companies.
+
+The project focuses on:
+
+* Warehouse inventory management
+* Real-time stock visibility
+* Operational workflow automation
+* Clean enterprise UI
+* Fast frontend performance
 
 ---
 
-## 🚀 Quick Start
+# ✨ Key Features
 
-### Method 1: The One-Click Way (Windows)
-If you are on Windows, simply double-click the `start.bat` file in the root directory. This script will:
-1.  Verify your Node.js installation.
-2.  Install all necessary dependencies (`npm install`).
-3.  Launch the development server.
-4.  Open the application in your default browser.
+## 📦 Product Catalog
 
-```bash
+* SKU-based product tracking
+* Advanced product listing
+* Kanban and List views
+* Smart sorting by stock, date, name, or SKU
+
+---
+
+## 🔄 Inventory Operations
+
+Perform all warehouse operations in one place:
+
+* **Receipts** — Add incoming stock
+* **Deliveries** — Ship products to customers
+* **Internal Transfers** — Move stock between warehouses
+* **Inventory Adjustments** — Correct stock discrepancies
+
+---
+
+## ⚡ Smart Replenishment
+
+Low stock items can be replenished instantly using a **one-click replenish button** directly from the product catalog.
+
+---
+
+## 📊 Real-Time Dashboard
+
+Monitor warehouse performance with live operational metrics:
+
+* Low stock alerts
+* Out-of-stock warnings
+* Pending warehouse operations
+* Quick navigation to issues
+
+---
+
+## 🏭 Multi-Warehouse System
+
+Supports complex logistics structures:
+
+* Multiple warehouses
+* Multiple storage locations
+* Cross-warehouse transfers
+
+---
+
+## 🖨️ Printable Operational Records
+
+Generate professional printable records for:
+
+* Receipts
+* Deliveries
+* Transfers
+* Adjustments
+
+---
+
+## 🎨 Premium Industrial UI
+
+The interface uses a **modern industrial aesthetic** featuring:
+
+* Glassmorphism panels
+* Text shuffle animations
+* High contrast status indicators
+* Smooth UI transitions
+
+---
+
+# 🛠 Technology Stack
+
+| Layer            | Technology            |
+| ---------------- | --------------------- |
+| Frontend         | React 19 + TypeScript |
+| Build Tool       | Vite                  |
+| Styling          | Tailwind CSS          |
+| Backend          | Supabase              |
+| Database         | PostgreSQL            |
+| State Management | Zustand               |
+| Form Handling    | React Hook Form       |
+| Validation       | Zod                   |
+| Icons            | Lucide React          |
+| Deployment       | Vercel                |
+
+---
+
+# ⚡ Running the Project
+
+The project is designed to run with **one simple command**.
+
+## Windows (Recommended)
+
+Just run:
+
+```
 ./start.bat
 ```
 
-### Method 2: Manual Developer Setup
-If you prefer the command line or are on a non-Windows OS:
+The script will automatically:
 
-1.  **Clone & Enter**:
-    ```bash
-    git clone <repository-url>
-    cd odoo_coreinv
-    ```
-2.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-3.  **Environment Setup**:
-    Create a `.env` file in the root and add your Supabase credentials:
-    ```env
-    VITE_SUPABASE_URL=your_supabase_url
-    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-    ```
-4.  **Launch**:
-    ```bash
-    npm run dev
-    ```
+1. Verify Node.js installation
+2. Install required dependencies
+3. Start the development server
+4. Open the application in your browser
+
+No additional setup is required.
 
 ---
 
-## ✨ Key Features
+## What `start.bat` Does
 
--   **🔍 Advanced Product Catalog**: Browse inventory via Kanban or List views. Features multi-criteria sorting by Date, Stock, Name, or SKU.
--   **🔄 Operations Hub**: Specialized forms for **Receipts**, **Deliveries**, **Internal Transfers**, and **Inventory Adjustments**.
--   **⚡ Stock Replenishment**: One-click "Replenish" shortcut from the product list to instant receipt generation.
--   **📊 Real-time Dashboard**: Live KPIs for low stock, out-of-stock items, and pending operations with direct navigation.
--   **🎨 Premium UI/UX**: Industrial aesthetic featuring text-shuffle animations, high-contrast status bars, and glassmorphism.
--   **🌐 Multi-Location Support**: Track stock across multiple warehouses and locations with cross-site availability hints.
--   **🖨️ Professional Records**: Built-in print functionality for all operational documents (Receipts, Transfers, etc.).
+The script internally performs:
 
----
+```
+npm install
+npm run dev
+```
 
-## 🛠️ Technology Stack
-
--   **Frontend**: React 19 (TypeScript)
--   **Build Tool**: Vite
--   **Styling**: Tailwind CSS 4.0
--   **Database/Auth**: Supabase (PostgreSQL)
--   **State Management**: Zustand
--   **Form Handling**: React Hook Form + Zod
--   **Icons**: Lucide React
+This ensures the project works even on **fresh machines without dependencies installed**.
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```text
-odooxindus/
-├── src/
-│   ├── components/         # Reusable UI & Logic components
-│   │   ├── ui/             # Atomic design components (Button, Input, etc.)
-│   │   ├── DashboardKpis    # Live performance metrics
-│   │   ├── Navbar          # Navigation & Branding
-│   │   └── Layout          # Base structure
-│   ├── pages/              # View-level components
-│   │   ├── operations/     # Receipts, Deliveries, Transfers, Adjustments
-│   │   ├── products/       # Catalog & Product Management
-│   │   ├── settings/       # Warehouse, Location, & Profile settings
-│   │   └── auth/           # Login & Multi-step Signup
-│   ├── lib/                # Third-party configurations (Supabase)
-│   ├── store/              # Zustand global state (Auth, UI)
-│   └── App.tsx             # Route configurations
-├── public/                 # Static assets & Icons
-├── database_setup.sql      # Core schema & Demo data
-├── vercel.json             # Deployment configurations
-├── package.json            # Dependencies & Scripts
-└── start.bat               # Windows automation script
+```
+odoo_coreinv
+│
+├── src
+│   ├── components
+│   │   ├── ui
+│   │   ├── Navbar
+│   │   ├── DashboardKpis
+│   │   └── Layout
+│   │
+│   ├── pages
+│   │   ├── operations
+│   │   ├── products
+│   │   ├── settings
+│   │   └── auth
+│   │
+│   ├── store
+│   │   └── Zustand global state
+│   │
+│   ├── lib
+│   │   └── Supabase configuration
+│   │
+│   └── App.tsx
+│
+├── public
+├── database_setup.sql
+├── vercel.json
+├── package.json
+└── start.bat
 ```
 
 ---
+📈 Future Improvements
 
-## ⚙️ Database Configuration
+Planned enhancements:
 
-To get started with the data layer, run the provided `database_setup.sql` in your Supabase SQL Editor. This will:
-1.  Initialize all necessary tables (Products, Locations, Warehouses, Receipts, etc.).
-2.  Setup row-level security (RLS) policies.
-3.  Populate the system with 20+ demo products and categories for immediate testing.
+Barcode scanner support
 
----
+Role-based permissions
 
-## 🌐 Deployment
+Purchase order system
 
-This project is specialized for **Vercel** hosting. Ensure you add your Supabase environment variables in the Vercel dashboard to enable the serverless backend features.
+Supplier management
 
----
+Inventory forecasting
 
-Developed with ❤️ for Modern Logistics.
+Mobile warehouse interface
